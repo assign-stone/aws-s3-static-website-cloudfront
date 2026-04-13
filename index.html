@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">MyTechFolio</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button id="themeToggle">🌙</button>
+  </nav>
+
+  <header class="hero">
+    <h1>Hello, I'm Shivani</h1>
+    <p>Aspiring Cloud & DevOps Engineer</p>
+  </header>
+
+  <main>
+    <section id="about" class="card">
+      <h2>About Me</h2>
+      <p>I’m passionate about cloud computing, automation, and building scalable systems.</p>
+    </section>
+
+    <section id="work" class="card">
+      <h2>My Work</h2>
+      <img src="images/hero.svg" alt="Work example" />
+      <p>Projects using AWS, Docker, and DevOps tools.</p>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Contact</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 My Portfolio</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    toggle.onclick = () => {
+      document.body.classList.toggle('dark');
+      toggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+    };
+  </script>
+</body>
+</html>

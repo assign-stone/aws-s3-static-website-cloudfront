@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #222;
+  transition: 0.3s;
+}
+
+.dark {
+  background: #121212;
+  color: #f1f1f1;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background: #2d89ef;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.card {
+  background: white;
+  margin: 1rem auto;
+  padding: 1.5rem;
+  max-width: 700px;
+  border-radius: 10px;
+}
+
+.dark .card {
+  background: #1f1f1f;
+}
+
+form input, form textarea {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.7rem;
+}
+
+button {
+  padding: 0.6rem 1rem;
+  background: #2d89ef;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #eee;
+}
+
+.dark footer {
+  background: #1a1a1a;
+}
