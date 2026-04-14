@@ -169,6 +169,68 @@ https://your-cloudfront-url
 
 ---
 
+## ⚠️ Important Note on Resource Cleanup (CloudFront Plan Issue)
+
+While deleting resources after completing this project, I encountered a limitation with Amazon CloudFront’s new plan-based pricing model.
+
+### 🔴 Issue Faced
+
+When attempting to delete the CloudFront distribution, the following error occurred:
+
+> *"You can't delete this distribution while it's subscribed to a pricing plan. After you cancel the pricing plan, you can delete the distribution at the end of monthly billing cycle."*
+
+---
+
+### 🧠 Root Cause
+
+* The CloudFront distribution was subscribed to the **Free Plan ($0/month)**.
+* Even after cancelling the plan, AWS keeps the subscription active until the **end of the billing cycle**.
+* During this period, the distribution **cannot be deleted immediately**.
+
+---
+
+### ✅ Solution / Workaround
+
+To avoid any unnecessary charges:
+
+1. **Disabled the CloudFront distribution**
+
+   * This stops all traffic and usage.
+
+2. **Deleted the S3 bucket (origin)**
+
+   * Ensures no data transfer occurs.
+
+3. **Cancelled the CloudFront plan**
+
+   * Prevents future billing.
+
+---
+
+### 💰 Cost Impact
+
+* CloudFront charges are based on:
+
+  * Data transfer
+  * Number of requests
+
+* Since:
+
+  * No origin (S3 deleted)
+  * No traffic
+  * Usage = 0%
+
+👉 **No additional cost is incurred during the waiting period.**
+
+---
+
+### 📌 Key Takeaway
+
+> In AWS, some services (like CloudFront with plans) may restrict immediate deletion due to billing lifecycle constraints.
+> Always disable resources and stop traffic first to ensure cost safety.
+
+---
+
 ## 🧠 Key Learnings
 
 * Difference between:
@@ -178,7 +240,9 @@ https://your-cloudfront-url
 * Configuring public access securely
 * Debugging real AWS errors
 * Understanding CloudFront ↔ S3 communication
-
+* Understood AWS billing lifecycle behavior
+* Learned how CloudFront plan-based restrictions work
+* Practiced safe resource cleanup strategies
 ---
 
 ## 🌍 Live Demo
